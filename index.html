@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock - Multiple Time Zones</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🕐 Digital Clock</h1>
+            <p class="subtitle">Multiple Time Zones Display</p>
+        </header>
+
+        <!-- Controls Section -->
+        <section class="controls">
+            <div class="control-group">
+                <label for="formatToggle" class="label">Time Format:</label>
+                <select id="formatToggle" class="select">
+                    <option value="24">24-Hour</option>
+                    <option value="12">12-Hour (AM/PM)</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="themeToggle" class="label">Theme:</label>
+                <button id="themeToggle" class="theme-btn">🌙 Dark</button>
+            </div>
+            <div class="control-group">
+                <button id="addClockBtn" class="add-btn">+ Add Time Zone</button>
+            </div>
+        </section>
+
+        <!-- Add Timezone Modal -->
+        <div id="modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Add Time Zone</h2>
+                    <button id="closeModal" class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <input 
+                        type="text" 
+                        id="timezoneSearch" 
+                        class="timezone-input" 
+                        placeholder="Search time zones..."
+                        autocomplete="off"
+                    >
+                    <div id="suggestions" class="suggestions"></div>
+                    <div id="timezoneList" class="timezone-list"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Clocks Container -->
+        <section class="clocks-container">
+            <div id="clocksGrid" class="clocks-grid">
+                <!-- Digital clocks will be added here dynamically -->
+            </div>
+        </section>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="empty-state">
+            <div class="empty-icon">⏰</div>
+            <p>No time zones added yet</p>
+            <p class="empty-hint">Click "Add Time Zone" to get started</p>
+        </div>
+
+        <!-- Saved Timezones Info -->
+        <footer class="footer">
+            <p>🔄 Times update every second</p>
+            <p>💾 Your time zones are saved automatically</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
